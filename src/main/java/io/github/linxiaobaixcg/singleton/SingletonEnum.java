@@ -7,8 +7,19 @@ public enum SingletonEnum {
 
     instance;
 
-    private SingletonEnum(){}
+    private String singleton = null;
 
-    public void method(){
+    private SingletonEnum(){
+        singleton = new String();
+    }
+
+    public String getInstance(){
+        return singleton;
+    }
+
+    public static void main(String[] args) {
+        String a = SingletonEnum.instance.getInstance();
+        String b = SingletonEnum.instance.getInstance();
+        System.out.println(a==b);
     }
 }
