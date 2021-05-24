@@ -8,7 +8,10 @@ package io.github.linxiaobaixcg.singleton;
  */
 public class DoubleCheck {
 
-    private static DoubleCheck doubleCheck = null;
+    /**
+     * volatile 防止指令重排序
+     */
+    private static volatile DoubleCheck doubleCheck = null;
 
     private DoubleCheck() {
     }
